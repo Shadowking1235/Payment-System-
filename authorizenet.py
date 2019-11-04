@@ -1,8 +1,8 @@
 # Authorize.net gateways
 
 import payment_processor.methods
-from payment_processor.exceptions import *
-from payment_processor.gateways import GenericGateway
+import payment_processor.exceptions
+import payment_processor.gateways
 
 URL_STANDARD = 'https://secure.authorize.net/gateway/transact.dll'
 URL_TEST = 'https://test.authorize.net/gateway/transact.dll'
@@ -176,8 +176,7 @@ class AuthorizeNetAIM_3_1(GenericGateway):
 
     def handleResponse(self, transaction):
         response = transaction.last_response.split(self.api['x_delim_char'])
-        print
-        response
+        print(response)
         ## Response ##
         #  0 - Response Code: 1 = Approved, 2 = Declined, 3 = Error, 4 = Held for Review
         #  1 - Response Subcode

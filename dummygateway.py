@@ -1,4 +1,4 @@
-from payment_processor.gateways import GenericGateway
+import payment_processor.gateways
 
 
 class DummyGateway(GenericGateway):

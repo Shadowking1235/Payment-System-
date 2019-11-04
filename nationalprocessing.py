@@ -5,7 +5,7 @@ import urlparse
 
 import payment_processor.methods
 from payment_processor.exceptions import *
-from payment_processor.gateways import GenericGateway
+import payment_processor.gateways
 
 
 class NationalProcessing(GenericGateway, ABC):

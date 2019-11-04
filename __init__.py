@@ -52,7 +52,8 @@ class CreditCard(GenericMethod):
 
         if not isinstance(expiration_date, (datetime.datetime, datetime.date)):
             raise ValueError(
-                "Credit method require the 'expiration_date' argument to be of type 'datetime.datetime' or 'datetime.date'.")
+                "Credit method require the 'expiration_date' argument to be of type 'datetime.datetime' or "
+                "'datetime.date'.")
 
         self.card_number = card_number
         self.expiration_date = expiration_date
@@ -108,7 +109,7 @@ class Check(GenericMethod):
 
     @classmethod
     def validCheckdigit(cls, routing_number, routing_number_length=9):
-        '''Validates the routing number's check digit'''
+        """Validates the routing number's check digit"""
         routing_number = str(routing_number).rjust(routing_number_length, '0')
         sum_digit = 0
 
